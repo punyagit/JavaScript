@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magical Javascript</title>
+    <script>
+
+        
+        function changeButtom(){
+           let numberOfRows = document.getElementById("newt").rows.length //[0].cells.length;
+           let numberOfColumns = document.getElementById("newt").rows[0].cells.length;
+           let colorValue = 200
+           for(let i = 0;i < numberOfRows;i++){
+               for(let k = 0;k < numberOfColumns;k++){
+                    var y = "#"+((1<<24)*Math.random()|0).toString(16)
+                    document.getElementById("newt").rows[i].cells[k].bgColor = y
+               }
+            }
+        }
+
+function createTable(){
+    var body = document.getElementsByTagName("body")[0];
+    // creates a <table> element and a <tbody> element
+    var tbl = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+ 
+  // creating all cells
+    let numberOfRows = prompt("Enter Number of rows")
+    let numberOfColumns = prompt("Enter number of columns")
+    let x = Number(numberOfRows)
+    let y = Number(numberOfColumns)
+    for (var i = 0; i < x; i++) {
+    // creates a table row
+        var row = document.createElement("tr");
+    for (var j = 0; j < y; j++) {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+      var cell = document.createElement("td");
+      //var cellText = document.createTextNode("");
+      //cell.appendChild(cellText);
+      row.appendChild(cell);
+    }
+ 
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  }
+ 
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  body.appendChild(tbl);
+  // sets the border attribute of tbl to 2;
+  tbl.setAttribute("border", "2");
+  tbl.setAttribute("id", "newt");
+  tbl.setAttribute("width", "900px");
+  tbl.setAttribute("height", "600px");
+
+}
+
+
+        
+    </script>
+</head>
+<body>
+
+    
+    <button id = "button" onclick="createTable()"> create</button>
+    
+    <button id = "button" onclick="setInterval(changeButtom, 600);"> speed2</button>
+    <button id = "button" onclick="setInterval(changeButtom, 300);"> speed3</button>
+    <button id = "button" onclick="setInterval(changeButtom, 100);"> speed4</button>
+    <!--
+    <table id = "newt" border = "1" width = "900px" height = "600px">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+    
+            </tr>
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+        
+                </tr>
+                <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+            
+                    </tr>
+    </table>
+-->
+</body>
+</html>
