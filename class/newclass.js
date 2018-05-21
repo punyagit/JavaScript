@@ -1,7 +1,7 @@
 // Every chrome doesn't understand this....
 // Inheritance in javascript
 //document.getElementById("dom").innerHTML = "punya";
-document.getElementById('new').innerHTML='jhghjghj'
+document.getElementById('new').innerHTML='Helllo'
 class Person{
     constructor(firstName,lastName){
         this.name = {}
