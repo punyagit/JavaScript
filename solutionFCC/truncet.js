@@ -1,3 +1,5 @@
+
+
 function truncateString(str, num) {
   // Clear out that junk in your trunk
   var stringLength = str.length;
@@ -9,4 +11,5 @@ function truncateString(str, num) {
   
 }
 
-truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
+var b = truncateString("A-tisket a-tasket A green and yellow basket", 11);
