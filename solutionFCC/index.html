@@ -3,48 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script>
-       function truncateString(str, num) {
-            // Clear out that junk in your trunk
-            var stringLength = str.length
-            if(stringLength > num){
-                var stringLength = str.length;
-                let newNum;
-                for(let i = 0; i < stringLength; i++){
-                    if(str[i] === " "){
-                        if(i < num){
-                        newNum = i
-                            
-                        }
-                        
-                    }
-                }
-
-                console.log(newNum)
-                str1 = str.slice(0,newNum);
-                var letters = /^[A-Za-z]+$/;
-                if(str1[str1.length -1].match(letters)){
-                    console.log(str1 + "...")
-                    return str1 + "...";
-                }
-                else{
-                    str1 = str.slice(0,-1);
-                    return str1 + "..."
-                }
-                
-
-            }
-            
-            return str;
-        
-        }
-
-
-    var b = truncateString("A-tisket a-tasket A green and yellow basket", 11);
-    </script>
+    <title>Learn javascript</title>
+    <script src = 'chunkymonkey.js'></script>
 </head>
 <body>
-    
+    <p id = "new"> dsfsdc</p>
+    <ul>
+        <li>book</li>
+        <li>hook</li>
+        <li>sook</li>
+        <li>look</li>
+
+    </ul>
 </body>
 </html>
+
