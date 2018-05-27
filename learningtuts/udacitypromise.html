@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Did the promish Finish?</h1>
+    <div class = "completion"> Not Yet</div>
+    <script>
+        function wait(ms) {
+            return new Promise(function(resolve) {
+                console.log(this)
+                window.setTimeout(function(){
+                    resolve()
+                }, ms)
+            })
+        }
+
+        var milliSeconds = 2000;
+        wait(milliSeconds).then(finish);
+
+        
+        
+        console.log("new line")
+        function finish(){
+            console.log("hello")
+        }
+        
+
+    </script>
+    
+</body>
+</html>

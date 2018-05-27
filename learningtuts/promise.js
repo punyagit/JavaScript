@@ -17,7 +17,7 @@ promiseToCleanTheRoom.then(function(resolve) { // resolve value come from resolv
 
 let cleanRoom = function(){
     return new Promise(function(resolve, reject){
-        console.log("i cleaned the room")
+        //console.log("i cleaned the room")
         
         resolve('Cleaned the room')
     })
@@ -40,7 +40,7 @@ cleanRoom().then(function(){
  return removeGarbage()
 })
 
-removeGarbage().then(function(){
-    return cleanRoom()
+// removeGarbage().then(function(){
+//     return cleanRoom()
 
-})
+// })

@@ -33,19 +33,21 @@ var person = {
     }
 }
 
-var arr = []
-for(i = 1; i < 10000; i++){
-    arr.push(i)
-}
-console.log(arr.length)
+// var arr = []
+// for(i = 1; i < 10000; i++){
+//     arr.push(i)
+// }
+// console.log(arr.length)
 
 
 var num = 1000;
 //person1.__proto__ = person
 var t0 = performance.now();
-for(i = 0; i < 10000;i++){
+for(i = 0; i < 10;i++){
     console.log("punya")
 }
 
 var t1 = performance.now();
 console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
+
+console.log(performance.memory)
