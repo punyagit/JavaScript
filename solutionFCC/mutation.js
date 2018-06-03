@@ -27,8 +27,8 @@ function bouncer(arr) {
     }
     console.log(newArray)
     return newArray;
-  }
+}
   
-  bouncer([7, "ate", "", false, 9]);
+bouncer([7, "ate", "", false, 9]);
   
   

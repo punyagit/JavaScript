@@ -8,7 +8,6 @@ function slasher(arr, howMany) {
         console.log(newArray)
         return newArray
     }
-    
-  }
+}
   
-  slasher([1, 2, 3], 2);
+slasher([1, 2, 3], 2);
