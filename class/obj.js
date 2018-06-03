@@ -8,7 +8,6 @@ let person1 = {
     fullname: function() {
         return this.firstName + " " + this.lastName
     }
-
 }
 
 let person2 = {
@@ -18,7 +17,6 @@ let person2 = {
     // fullname: function() {
     //     return this.firstName + " " + this.lastName
     // }
-
 }
 person2.__proto__ = person1 //  now person 2 can use function or attributes of person 1
 

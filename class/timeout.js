@@ -9,7 +9,6 @@ function doSomething(callback) {
         let result = [1,2,3]
         console.log('dosomething()')
         callback(result)
-        
         //return[1,2,3]
     }
     //func()
