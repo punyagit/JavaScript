@@ -32,6 +32,8 @@ function get(url) {
 
 
 
+
+
   
 function cout(){
   for(var i = 0; i < 1000; i++){
