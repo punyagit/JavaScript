@@ -1,3 +1,5 @@
+// Basic javascript collection collection for FCC (intro to js)
+
 var collection = {
     "2548": {
         "album": "Slippery When Wet",
@@ -28,10 +30,10 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
-    var id = collection[id]
+    var id = collection[id] // can't use dot notation when property value is number
 
     if (id[prop] === undefined) {
-        id[prop] = [value]
+        id[prop] = [value] // setting the value
     }
 
     if (value == "") {
