@@ -28,10 +28,28 @@ var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
+    var id = collection[id]
 
-    collection[id][prop] = value; // can't use dot notation when object start with number 
+    if (id[prop] === undefined) {
+        id[prop] = [value]
+    }
 
-    console.log(collection[id])
+    if (value == "") {
+        delete id[prop];
+    }
+
+    else if (prop !== "tracks") {
+        id[prop] = value;
+        //id["tracks"] = [];
+    }
+    else {
+        id[prop].push(value);
+    }
+
+
+
+
+    console.log(id)
     return collection;
 }
 
