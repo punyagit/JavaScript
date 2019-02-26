@@ -21,3 +21,8 @@ let testStr = "Repeat, Repeat, Repeat";
 let repeatRegex = /Repeat/g;
 testStr.match(repeatRegex);
 // Returns ["Repeat", "Repeat", "Repeat"]
+
+// The wildcard character . will match any one character. 
+//For example, if you wanted to match "hug", "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
+myregex = /hu./;
+myString.match(myRegex);
