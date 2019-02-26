@@ -31,3 +31,8 @@ myString.match(myRegex);
 let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
 let vowelRegex = /[aeiou]/ig; // check both upper and lower case vowel more than once
 let result = quoteSample.match(vowelRegex); // Change this line
+
+// character set like [a-e] or [a-z] or can be used
+
+// Using caret to set what to not match 
+myRegex = /[^aeiou]/ig // it wont match any vowel
