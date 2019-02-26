@@ -36,3 +36,10 @@ let result = quoteSample.match(vowelRegex); // Change this line
 
 // Using caret to set what to not match 
 myRegex = /[^aeiou]/ig // it wont match any vowel
+
+// + sign is use for checking if the match is in a row 
+myRegex = /a+/
+
+// * is used to check if characters occor zero or more times
+
+// $ sign to search end of the string.
