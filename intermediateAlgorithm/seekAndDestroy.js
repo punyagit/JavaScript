@@ -1,4 +1,8 @@
-function destroyer(...arr) {
+
+/// Advanced solution 
+//const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
+
+function destroyer(arr) {
     // Remove all the values
 
     let newArr = []
