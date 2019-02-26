@@ -43,3 +43,9 @@ myRegex = /a+/
 // * is used to check if characters occor zero or more times
 
 // $ sign to search end of the string.
+
+// \w can be used instead of This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers. 
+//Note, this character class also includes the underscore character (_).
+
+myRegex = /\w/ // 
+// \W is just opposite of small letter /w
