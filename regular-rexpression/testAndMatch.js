@@ -10,3 +10,8 @@ let myRegex1 = /dog|cat|bird|fish/;
 
 // To Ignore case Just use i 
 myRegex = /dog|cat|bird|fish/i
+
+// You can extract the actual word using .match()
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
