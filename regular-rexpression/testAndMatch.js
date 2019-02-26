@@ -49,3 +49,12 @@ myRegex = /a+/
 
 myRegex = /\w/ // 
 // \W is just opposite of small letter /w
+
+// \d just to represent digit
+// \D just oppostite neglect digit
+
+// \s to check white space
+
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6}\sno/; // Change this line
+let result = ohRegex.test(ohStr);
