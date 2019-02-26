@@ -26,3 +26,8 @@ testStr.match(repeatRegex);
 //For example, if you wanted to match "hug", "huh", "hut", and "hum", you can use the regex /hu./ to match all four words.
 myregex = /hu./;
 myString.match(myRegex);
+
+// character classes can be used to search for a literal pattern inside [] (square bracket)
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/ig; // check both upper and lower case vowel more than once
+let result = quoteSample.match(vowelRegex); // Change this line
