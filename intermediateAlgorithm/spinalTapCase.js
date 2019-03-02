@@ -1,11 +1,18 @@
 function spinalCase(str) {
-    string = ""
-    let newStr = str.replace(/_/g, "-")
-    for (let i = 0; i < newStr.length; i++) {
-        if (i === 0 && /[A - Z]/.test(newStr[i])) {
-
+    string1 = ""
+    //let newStr = str.replace(/[_\s]/g, "-")
+    //console.log(newStr)
+    for (let i = 0; i < str.length; i++) {
+        if (/[^_-\s]/.test(str[i - 1]) && /[A-Z]/.test(str[i]) && i !== 0) {
+            string1 += "-" + str[i]
+        } else {
+            string1 += str[i];
         }
+
+
     }
+    let newStr = (string1.toLowerCase()).replace(/[_\s]/g, "-")
+    console.log(string1)
 }
 
-spinalCase('This_Is_Spinal Tap');
+spinalCase("This Is Spinal Tap")
