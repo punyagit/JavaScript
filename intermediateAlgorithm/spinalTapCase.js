@@ -1,18 +1,11 @@
 function spinalCase(str) {
-    // "It's such a fine line between stupid, and clever."
-    // --David St. Hubbins
-    let nstr = ""
-    for (let i = 0; i < str.length; i++) {
-        if (/^[A-Z]/.test(str[i])) {
-            a = str[i].toLowerCase();
-            console.log(a)
-        }
-        nstr += a || str[i]
-        a = null;
+    string = ""
+    let newStr = str.replace(/_/g, "-")
+    for (let i = 0; i < newStr.length; i++) {
+        if (i === 0 && /[A - Z]/.test(newStr[i])) {
 
+        }
     }
-    console.log(nstr)
-    return str;
 }
 
-spinalCase('This Is Spinal Tap');
+spinalCase('This_Is_Spinal Tap');
