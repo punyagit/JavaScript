@@ -14,3 +14,7 @@ undefined
 
 var x,
 (x === undefined) ? true : false;
+
+null
+
+globalThis
