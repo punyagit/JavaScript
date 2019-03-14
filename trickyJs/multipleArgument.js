@@ -1,14 +1,16 @@
-
+// When you write a normal function you can get lengths using length properties in arguments 
 function sum(x, y) {
     console.log(arguments.length)
 };
 
-//"use strict"
+//If you using arrow function argument is not provides so you can use rest operator
 
-const sum1 = (x, y) => {
-    console.log(Function.length)
+const sum1 = (...args) => {
+    console.log(args.length)
 }
 
 
 
-sum(3, 4)
+
+sum(3, 4, 5)
+sum1(4, 5)
