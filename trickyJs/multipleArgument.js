@@ -14,3 +14,10 @@ const sum1 = (...args) => {
 
 sum(3, 4, 5)
 sum1(4, 5)
+
+    !function(x){
+        (function(y){
+            console.log(y+ x)
+        })(5)
+        
+    }(7);
