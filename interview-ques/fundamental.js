@@ -54,5 +54,12 @@ function foo() {
 // When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
 
 
+///-------------Polyfilling------
+// In web development, a polyfill is code that implements a feature on web browsers that do not support the feature. 
+
+/// ====== Transpilling ----
+// some syntax can't be pollyfill so you use tools to convert your newer code into older code equivalent 
+// this is callde transpinlinf "transfer + compiling"
+
 
 
