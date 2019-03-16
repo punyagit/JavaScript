@@ -61,5 +61,14 @@ function foo() {
 // some syntax can't be pollyfill so you use tools to convert your newer code into older code equivalent 
 // this is callde transpinlinf "transfer + compiling"
 
+//====== Scope and lexical Scope--------
 
 
+var scope = "I am global";
+function whatismyscope(){
+   var scope = "I am just a local";
+   function func() {return scope;}
+   return func;
+}
+
+//whatismyscope()()  // It will return i am local becuse it check where the variable is originally defined
