@@ -28,5 +28,31 @@ typeof(a)//==  "object"  its a bug so take a special precaution when comparing n
     var multiply = string1 * 1; // here the value will be number 56
 
 
+    //-- hoisting 
+
+    // var is a function scope and let is a block scope 
+
+//--- Hoisting 
+
+
+var a = 2;
+
+foo();					// works because `foo()`
+						// declaration is "hoisted"
+
+function foo() {
+	a = 3;
+
+	//console.log( a );	// 3
+
+	var a;				// declaration is "hoisted"
+                        // to the top of `foo()`
+}
+
+//console.log( a );	// 2  " the value of a is is 2 here because a is hoisted in line 16"
+
+// When you declare a variable, it is available anywhere in that scope, as well as any lower/inner scopes.
+
+
 
 
