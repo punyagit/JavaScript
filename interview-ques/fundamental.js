@@ -1,3 +1,6 @@
+
+// Variables that have no value currently, actually have the undefined value. Calling typeof against such 
+//variables will return "undefined"
 //As we asserted in Chapter 1, JavaScript has typed values, not typed variables. 
 //The following built-in types are available:
 
@@ -14,6 +17,14 @@ a = null
 typeof(a)//==  "object"  its a bug so take a special precaution when comparing null to object
 
 // object array and function are type of object
+
+//------ Falsy value list----
+
+// undefined
+// null
+// false
+// +0, -0, and NaN
+// ""
 
 
     // ----- Coercion-------
@@ -71,4 +82,8 @@ function whatismyscope(){
    return func;
 }
 
-//whatismyscope()()  // It will return i am local becuse it check where the variable is originally defined
+//whatismyscope()()  // It will return i am local becuse it check where the variable is originally
+
+
+/// ====== Array -----
+  // Using delete in an arayy remove the slot but length reamin same and value become undefined

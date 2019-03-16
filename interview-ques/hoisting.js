@@ -2,6 +2,16 @@
 
 //--- Hoisting 
 
+// javascript read top to buttom but
+
+
+k = "puna"
+var k;
+console.log(k) // instead of printing undefined it print "puna" but if you use let error because
+// it read as var a; and a = 2 in any case
+
+// both function and variable are hoisted but function are hoisted first
+
 
 var a = 2;
 
