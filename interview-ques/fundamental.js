@@ -26,6 +26,7 @@ typeof(a)//==  "object"  its a bug so take a special precaution when comparing n
 // +0, -0, and NaN
 // ""
 
+// object is truthty event with falsy value like ar c = new String("")
 
     // ----- Coercion-------
 

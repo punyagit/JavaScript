@@ -1,0 +1,16 @@
+
+// following function convert word to kebab case or hello-how-are-you
+
+function spinalCase(str) {
+    // Create a variable for the white space and underscores.
+    var regex = /\s+|_+/g;
+
+    // Replace low-upper case to low-space-uppercase
+    str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+
+    // Replace space and underscore with -
+    return str.replace(regex, '-').toLowerCase();
+}
+
+// test here
+spinalCase('This_Is SpinalTap');
