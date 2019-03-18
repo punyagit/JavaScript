@@ -1,5 +1,5 @@
-const Utils;
-export default let Utils = (function(){
+
+ Utils = (function(){
     return{
         shuffleArray: function(arr){
             let newArray =[]
@@ -22,5 +22,5 @@ export default let Utils = (function(){
 
 })();
 
-
+module.exports = Utils
 

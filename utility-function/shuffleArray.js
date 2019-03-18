@@ -1,5 +1,6 @@
 // Fisher-yates shuffle algorithm    -- 0(n)
-import myFun from './util'
+//let myFunc = require('./util')
+
 function shuffleArray(arr){
     let newArray =[]
     let c = 0
