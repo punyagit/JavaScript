@@ -1,6 +1,24 @@
 
+// solve using hastable
 
-var twoSum = function (nums, target) {
+let twoSum = function (nums, target) {
+    let numObject = {};
+    for (var i = 0; i < nums.length; i++) {
+        let thisNum = nums[i];
+        numObject[thisNum] = i;
+    }
+    for (var i = 0; i < nums.length; i++) {
+        let diff = target - nums[i];
+        if (numObject.hasOwnProperty(diff) && numObject[diff] !== i) {
+            return [i, numObject[diff]];
+        }
+    }
+
+
+}
+
+
+let twoSum2 = function (nums, target) {
 
 
     for (let i = 0; i < nums.length; i++) {
@@ -18,12 +36,14 @@ var twoSum = function (nums, target) {
     }
     return false
 };
-let array = Array.from(Array(1000).keys())
-var t0 = performance.now();
+// let array = Array.from(Array(10).keys())
 
-console.log(twoSum(array, 225000))
-var t1 = performance.now();
-console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate:');
+
+// var t0 = performance.now();
+
+console.log(twoSum([3, 3, 11, 15], 6))
+// var t1 = performance.now();
+// console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate:');
 
 
 
