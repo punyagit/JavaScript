@@ -36,14 +36,14 @@ let twoSum2 = function (nums, target) {
     }
     return false
 };
-// let array = Array.from(Array(10).keys())
+let array = Array.from(Array(1000000).keys())
 
 
-// var t0 = performance.now();
+var t0 = performance.now();
 
-console.log(twoSum([3, 3, 11, 15], 6))
-// var t1 = performance.now();
-// console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate:');
+console.log(twoSum(array, 60000000))
+var t1 = performance.now();
+console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate:');
 
 
 
