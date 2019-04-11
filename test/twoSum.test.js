@@ -1,6 +1,6 @@
-const getSum = require('../sumBetween')
-const twoSum = require('../twoSum')
-const isPalindrome = require('../isPalindrome')
+const getSum = require('../utility-function/sumBetween')
+const twoSum = require('../utility-function/twoSum')
+const isPalindrome = require('../utility-function/isPalindrome')
 
 test('add (1,4) to equal to 10', () => {
     expect(getSum(1, 4)).toBe(10);
