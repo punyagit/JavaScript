@@ -1,6 +1,7 @@
 const getSum = require('../utility-function/sumBetween')
 const { twoSum, timeTaken } = require('../utility-function/twoSum')
 const isPalindrome = require('../utility-function/isPalindrome')
+const util = require('../utility-function/util')
 
 
 
@@ -40,5 +41,9 @@ test('check palindrome (-1221) to be False', () => {
 
 test('not more than 40 millisecond', () => {
     expect(timeTaken < 40).toBeTruthy();
+})
+
+test('should be an array', () => {
+    expect(util.shuffleArray([1, 9, 7, 2])).not.toBe([1, 9, 7, 2]);
 })
 
