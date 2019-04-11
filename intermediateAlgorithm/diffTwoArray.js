@@ -25,9 +25,9 @@ function diffArray(arr1, arr2) {
     }
 
     // Same, same; but different.
-    console.log(newArr)
+    // console.log(newArr)
     return newArr;
-    console.log(array3);
+    // console.log(array3);
 }
 
 module.exports = diffArray
