@@ -7,11 +7,12 @@ function isPalindrome(num) {
     }
     while (num > 0) {
         if (Math.floor(num / value) === num % 10) {
-            num = Math.floor((x % value) / 10);
+            num = Math.floor((num % value) / 10);
             value = Math.floor(value / 100)
         } else return false
     }
     return true
 }
 
+module.exports = isPalindrome
 console.log(isPalindrome(1214))
