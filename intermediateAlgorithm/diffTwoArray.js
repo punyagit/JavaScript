@@ -30,4 +30,6 @@ function diffArray(arr1, arr2) {
     console.log(array3);
 }
 
+module.exports = diffArray
+
 diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
