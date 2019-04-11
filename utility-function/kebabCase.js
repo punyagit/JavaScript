@@ -13,4 +13,8 @@ function spinalCase(str) {
 }
 
 // test here
-spinalCase('This_Is SpinalTap');
+let start = new Date()
+console.log(spinalCase('This_Is SpinalTap This_Is SpinalTapThis_Is SpinalTap This_Is SpinalTap This_Is SpinalTap '));
+let end = new Date() - start
+
+console.log("time taken " + end + " Milli Second")

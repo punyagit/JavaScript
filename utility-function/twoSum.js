@@ -14,7 +14,7 @@ let twoSum = function (nums, target) {
         }
     }
 
-
+    return false
 }
 
 
@@ -36,15 +36,12 @@ let twoSum2 = function (nums, target) {
     }
     return false
 };
-let array = Array.from(Array(1000000).keys())
+let array = Array.from(Array(6000000).keys())
 
 
-var t0 = performance.now();
 
+let start = new Date()
 console.log(twoSum(array, 60000000))
-var t1 = performance.now();
-console.log('Took', (t1 - t0).toFixed(4), 'milliseconds to generate:');
+let end = new Date() - start
 
-
-
-
+console.log("time taken " + end + " Milli Second")

@@ -2,11 +2,12 @@ function removeDuplicate(head) {
     // var set1 = [... new Set(head)]  /// using set to remove duplicate values
     // console.log(set1)
     let obj = {}
+    let arr = []
     for (i in head) {
         obj[head[i]] = ""
     }
-    let b = Object.keys(obj)
-    return b
+    let arr = Object.keys(obj)
+    return arr
 }
 
 

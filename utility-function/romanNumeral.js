@@ -38,8 +38,14 @@ function romanToInteger(s) {
 
 
 
-}
 
-console.log(romanToInteger("MDXLIII"))
+}
+let start = new Date()
+romanToInteger("MMDXDLIII")
+let end = new Date() - start
+
+console.log("time taken " + end + " Milli Second")
+
+
 
 
