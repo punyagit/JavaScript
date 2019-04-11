@@ -41,7 +41,9 @@ let array = Array.from(Array(6000000).keys())
 
 
 let start = new Date()
-console.log(twoSum(array, 60000000))
+console.log(twoSum([2, 7, 9, 12], 9))
 let end = new Date() - start
 
 console.log("time taken " + end + " Milli Second")
+
+module.exports = twoSum
