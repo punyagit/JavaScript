@@ -36,14 +36,14 @@ let twoSum2 = function (nums, target) {
     }
     return false
 };
-let array = Array.from(Array(6000000).keys())
+let array = Array.from(Array(600000).keys())
 
 
 
 let start = new Date()
-console.log(twoSum([2, 7, 9, 12], 9))
-let end = new Date() - start
+twoSum(array, 300)
+let timeTaken = new Date() - start
 
-console.log("time taken " + end + " Milli Second")
+console.log("time taken " + timeTaken + " Milli Second")
 
-module.exports = twoSum
+module.exports = { twoSum, timeTaken }

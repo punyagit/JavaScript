@@ -1,5 +1,5 @@
 const getSum = require('../utility-function/sumBetween')
-const twoSum = require('../utility-function/twoSum')
+const { twoSum, timeTaken } = require('../utility-function/twoSum')
 const isPalindrome = require('../utility-function/isPalindrome')
 
 
@@ -25,16 +25,20 @@ test('add ([2,2,9,12],4) to equal to [0,1]', () => {
 // test is palindrome function
 
 test('check palindrome (1221) to be true', () => {
-    expect(isPalindrome(1221)).toBeTruthy;
+    expect(isPalindrome(1221)).toBeTruthy();
 });
 
 test('check palindrome (-1221) to be False', () => {
-    expect(isPalindrome(-1221)).toBeFalsy;
+    expect(isPalindrome(-1221)).toBeFalsy();
 });
 
 // check object
 test('check palindrome (-1221) to be False', () => {
-    expect(isPalindrome(-1221)).toBeFalsy;
+    expect(isPalindrome(-1221)).toBeFalsy();
 });
 
+
+test('not more than 40 millisecond', () => {
+    expect(timeTaken < 40).toBeTruthy();
+})
 
