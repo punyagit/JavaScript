@@ -18,5 +18,7 @@ function rot13(str) { // LBH QVQ VG!
     return newStr;
 }
 
+module.exports = rot13
+
 // Change the inputs below to test
 rot13("SERR PBQR PNZC");

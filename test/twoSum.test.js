@@ -2,7 +2,7 @@ const getSum = require('../utility-function/sumBetween')
 const { twoSum, timeTaken } = require('../utility-function/twoSum')
 const isPalindrome = require('../utility-function/isPalindrome')
 const util = require('../utility-function/util')
-
+const caesarSipher = require('../dsAndAlgorithm/caesarsCipher')
 
 
 test('add (1,4) to equal to 10', () => {
@@ -47,3 +47,6 @@ test('should be an array', () => {
     expect(util.shuffleArray([1, 9, 7, 2])).not.toBe([1, 9, 7, 2]);
 })
 
+test('SERR PBQR PNZC should print FREE CODE CAMP', () => {
+    expect(caesarSipher("SERR PBQR PNZC")).toBe("FREE CODE CAMP")
+})
