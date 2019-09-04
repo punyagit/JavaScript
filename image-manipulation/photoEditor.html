@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <canvas id="canvas" width="256px" height="200px" style="float:left; border: 2px solid black"
+        onclick="myClick()"></canvas>
+    <canvas id="canvas1" width="256px" height="200px" style="float:left; border: 2px solid black"></canvas>
+    <div id="color" style="width:200px;height:50px;float:left;color:blue"></div>
+    <button onclick="invert()">Invert</button>
+    <button onclick="grayScale()">Gray Scale</button>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <p>Brightness: <span id="demo"></span></p>
+    </div>
+
+
+
+    <script src="editor.js"></script>
+
+</body>
+
+</html>
