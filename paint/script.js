@@ -16,22 +16,20 @@ function getCursorPosition(canvas, event) {
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
     console.log("x: " + x + " y: " + y);
+    ctx.beginPath();
+    ctx.arc(x, y + 50, 100, 0, 2 * Math.PI);
+    ctx.stroke();
+    // if (tempX) {
+    //     ctx.strokeStyle = 'green';
+    //     ctx.lineWidth = 6;
+    //     ctx.lineTo(x, y);
 
-
-    if (tempX) {
-        ctx.strokeStyle = 'green';
-        ctx.lineWidth = 6;
-        ctx.lineTo(x, y);
-
-        ctx.stroke();
-    } else {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        console.log("fdf")
-        tempX = 1
-    }
-
-
-
+    //     ctx.stroke();
+    // } else {
+    //     ctx.beginPath();
+    //     ctx.moveTo(x, y);
+    //     console.log("fdf")
+    //     tempX = 1
+    // }
 }
 
