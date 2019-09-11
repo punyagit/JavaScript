@@ -3,3 +3,19 @@ h1{
     color:red;
     text-align: center;
 }
+
+#nameBox{
+    margin:40px;
+}
+
+table{
+    border: 1px solid black;
+    width: 300px;
+    background-color: yellowgreen;
+    
+}
+
+.tdCss{
+    padding: 12 0 12 3;
+    border: 2px solid black;
+}

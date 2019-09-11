@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    width:60%;
+    margin:auto;
+    margin-top: 40px;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-gap: 3px;
+   
+  }
+  .grid > div {
+    background-color: hotpink;
+    border: 1px solid black;
+    color: white;
+    min-height: 50px;
+    text-align: center;
+  }
+
+  .grid > div:nth-child(13) {
+      background-color: lightgrey;
+    grid-row: span 9;
+    grid-column: span 9;
+  }
