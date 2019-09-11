@@ -5,7 +5,7 @@
     margin-top: 40px;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    grid-gap: 3px;
+    
    
   }
   .grid > div {
@@ -20,4 +20,11 @@
       background-color: lightgrey;
     grid-row: span 9;
     grid-column: span 9;
+  }
+
+  .grid > div>p{
+    transform: rotate(-60deg);
+    font-stretch: extra-expanded;
+      font-size: 40px;
+      color: red;
   }
