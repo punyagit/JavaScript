@@ -32,4 +32,4 @@ const myName = () => {
         , 6000);
 }
 
-myName()
+module.exports = myName
