@@ -2,5 +2,6 @@
 *DS_Store
 **/.DS_Store
 ./**/.DS_Store
+./react-app/node_modules
 
 node_modules

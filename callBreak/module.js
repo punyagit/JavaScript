@@ -8,4 +8,17 @@ function myModule() {
     }
 }
 
-module.exports = myModule;
+module.exports = myModule; \
+
+
+let a = [1]
+let b = ["punya"]
+
+let c = ["ad", "fdf"]
+
+let e = [1, 2, 3]
+
+let d = [5, "df"]
+
+
+d.u
