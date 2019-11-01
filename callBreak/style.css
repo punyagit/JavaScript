@@ -40,7 +40,8 @@ img{
 }
 button{
     position: absolute;
-    bottom: 0px;
+    left: 200px;
+    bottom: 5px;
     background-color: silver;
 }
 
