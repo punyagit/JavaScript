@@ -1,5 +1,5 @@
 
-var myModule = require('myModule');
+//var myModule = require('myModule');
 
 
 let arrayOfCard = ["AC.png", "AD.png", "AH.png", "AS.png", "2C.png", "2D.png", "2H.png", "2S.png", "3C.png", "3D.png", "3H.png", "3S.png"
@@ -16,9 +16,6 @@ function shuffleArray(arr) {
         let randomNumber = Math.floor(Math.random() * arr.length);
         newArray.push(arr[randomNumber])
         arr[randomNumber] = arr[arr.length - 1]
-
-
-
         arr.pop();
     }
     return newArray
@@ -31,13 +28,32 @@ let newShuffleCard = shuffleArray(arrayOfCard);
 
 
 (function () {
-    let myImg = document.createElement("img")
-    myImg.src = "image/AC.png"
-    myImg.width = 100;
-    myImg.height = 150;
-    document.getElementById('body').appendChild(myImg);
+    let myImg;
+    for (let i = 0; i < newShuffleCard.length; i++) {
+        myImg = document.createElement("img")
+        myImg.src = "image/" + newShuffleCard[i]
+        myImg.width = 100;
+        myImg.height = 150;
 
+        let distCard = i % 4;
+        if (distCard === 0) {
+            myImg.style.left = i * 7 + "px";
+            document.getElementById('player1').appendChild(myImg)
+        };
+        if (distCard === 1) {
+            myImg.style.left = i * 7 + "px";
+            document.getElementById('player2').appendChild(myImg)
+        }
+        if (distCard === 2) {
+            myImg.style.left = i * 7 + "px";
+            document.getElementById('player3').appendChild(myImg)
+        };
+        if (distCard === 3) {
+            myImg.style.left = i * 7 + "px";
+            document.getElementById('player4').appendChild(myImg)
+        };
 
+    }
 })();
 
 

@@ -1,3 +1,40 @@
 body{
     background-color: silver;
 }
+
+#card-holder div{
+  
+   display: block;
+    min-height: 200;
+    margin:4px;
+    /* background-color: greenyellow; */
+}
+
+#card-holder div:first-child{
+    position: relative;
+    background-color: green;
+    
+}
+
+#card-holder div:nth-child(2){
+    position: relative;
+    background-color: rebeccapurple;
+
+}
+
+#card-holder div:nth-child(3){
+    background-color: burlywood;
+
+}
+
+#card-holder div:nth-child(4){
+    background-color: steelblue;
+
+}
+
+img{
+    position: absolute;
+}
+
+
+
