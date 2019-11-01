@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
@@ -10,10 +10,18 @@
 
 <body id="body">
     <div id="card-holder">
-        <div id="player1"></div>
-        <div id="player2"></div>
-        <div id="player3"></div>
-        <div id="player4"></div>
+        <div id="player1">
+            <button id="player1" onclick="shortCard(this.id)">Short Card</button>
+        </div>
+        <div id="player2">
+            <button id="player2" onclick="shortCard(this.id)">Short Card</button>
+        </div>
+        <div id="player3">
+            <button id="player3" onclick="shortCard(this.id)">Short Card</button>
+        </div>
+        <div id="player4">
+            <button id="player4" onclick="shortCard(this.id)">Short Card</button>
+        </div>
     </div>
 
     <script src="app.js" type="text/javascript"></script>

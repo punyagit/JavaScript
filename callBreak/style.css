@@ -38,6 +38,11 @@ body{
 img{
     position: absolute;
 }
+button{
+    position: absolute;
+    bottom: 0px;
+    background-color: silver;
+}
 
 
 

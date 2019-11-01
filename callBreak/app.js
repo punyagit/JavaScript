@@ -27,7 +27,7 @@ function shuffleArray(arr) {
 let newShuffleCard = shuffleArray(arrayOfCard);
 
 
-(function () {
+let shortCard = (function () {
     let myImg;
     let player1 = []
     let player2 = []
@@ -63,10 +63,36 @@ let newShuffleCard = shuffleArray(arrayOfCard);
         };
 
     }
+    return function (id) {
+        if (id === "player1") displaySortedCard(player1, id)
+
+        if (id === "player2") displaySortedCard(player2, id)
+
+        if (id === "player3") displaySortedCard(player3, id)
+
+        if (id === "player4") displaySortedCard(player4, id)
+
+    }
+
+
+
 
 })();
 
+function displaySortedCard(array, id) {
+    array.sort()
+    for (let i = 0; i < array.length; i++) {
+        myImg = document.createElement("img")
+        myImg.src = "image/" + array[i]
+        myImg.width = 100;
+        myImg.height = 150;
 
+        myImg.style.left = (i * 20) + "px";
+        document.getElementById(id).appendChild(myImg)
+
+    }
+
+}
 
 
 
