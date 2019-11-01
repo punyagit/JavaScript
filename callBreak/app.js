@@ -38,27 +38,27 @@ let shortCard = (function () {
         myImg = document.createElement("img")
         myImg.src = "image/" + newShuffleCard[i]
         myImg.width = 100;
-        myImg.height = 150;
+        myImg.height = 130;
 
         let distCard = i % 4;
         if (distCard === 0) {
             player1.push(newShuffleCard[i])
-            myImg.style.left = (i / 4 * 20) + "px";
+            myImg.style.left = (i / 4 * 14) + "px";
             document.getElementById('player1').appendChild(myImg)
         };
         if (distCard === 1) {
             player2.push(newShuffleCard[i])
-            myImg.style.left = ((i - 1) / 4 * 20) + "px";
+            myImg.style.left = ((i - 1) / 4 * 14) + "px";
             document.getElementById('player2').appendChild(myImg)
         }
         if (distCard === 2) {
             player3.push(newShuffleCard[i])
-            myImg.style.left = ((i - 2) / 4 * 20) + "px";
+            myImg.style.left = ((i - 2) / 4 * 14) + "px";
             document.getElementById('player3').appendChild(myImg)
         };
         if (distCard === 3) {
             player4.push(newShuffleCard[i])
-            myImg.style.left = ((i - 3) / 4 * 20) + "px";
+            myImg.style.left = ((i - 3) / 4 * 14) + "px";
             document.getElementById('player4').appendChild(myImg)
         };
 
@@ -85,9 +85,9 @@ function displaySortedCard(array, id) {
         myImg = document.createElement("img")
         myImg.src = "image/" + array[i]
         myImg.width = 100;
-        myImg.height = 150;
+        myImg.height = 130;
 
-        myImg.style.left = (i * 20) + "px";
+        myImg.style.left = (i * 14) + "px";
         document.getElementById(id).appendChild(myImg)
 
     }

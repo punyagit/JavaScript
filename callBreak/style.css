@@ -2,36 +2,56 @@ body{
     background-color: silver;
 }
 
+#card-holder{
+    margin: auto;
+    background-color: darkslategray;
+    width:900px;
+    min-height: 700px;
+    border-radius: 50%;
+    position: relative;
+}
 #card-holder div{
-  display:block;
-  float:left;
-    min-width:500px;
-    min-height: 200;
-    margin:4px;
+    min-width:350px;
+    min-height: 160px;
     /* background-color: greenyellow; */
+    
 }
 
 #card-holder div:first-child{
-    position: relative;
-    background-color: green;
+position: absolute;
+   top: 15px;
+   left:322px;
     
 }
 
 #card-holder div:nth-child(2){
-    position: relative;
-    background-color: rebeccapurple;
-
+    position: absolute;
+    top:284px;
+    left:6px;
 }
 
 #card-holder div:nth-child(3){
-    position: relative;
-    background-color: burlywood;
-
+    position: absolute;
+    left:626px;
+    top:284px;
 }
 
 #card-holder div:nth-child(4){
-    position: relative;
-    background-color: steelblue;
+    position: absolute;
+    bottom:0px;
+    left: 322px;
+
+}
+
+#card-holder div:nth-child(5){
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color:rgb(178, 219, 106);
+    top:200px;
+    left: 275px;
+    border: 1px solid red;
 
 }
 
@@ -40,7 +60,7 @@ img{
 }
 button{
     position: absolute;
-    left: 200px;
+    left: 100px;
     bottom: 5px;
     background-color: silver;
 }
