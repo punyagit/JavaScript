@@ -3,8 +3,9 @@ body{
 }
 
 #card-holder div{
-  
-   display: block;
+  display:block;
+  float:left;
+    min-width:500px;
     min-height: 200;
     margin:4px;
     /* background-color: greenyellow; */
@@ -23,11 +24,13 @@ body{
 }
 
 #card-holder div:nth-child(3){
+    position: relative;
     background-color: burlywood;
 
 }
 
 #card-holder div:nth-child(4){
+    position: relative;
     background-color: steelblue;
 
 }

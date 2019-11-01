@@ -29,6 +29,11 @@ let newShuffleCard = shuffleArray(arrayOfCard);
 
 (function () {
     let myImg;
+    let player1 = []
+    let player2 = []
+    let player3 = []
+    let player4 = []
+
     for (let i = 0; i < newShuffleCard.length; i++) {
         myImg = document.createElement("img")
         myImg.src = "image/" + newShuffleCard[i]
@@ -37,23 +42,28 @@ let newShuffleCard = shuffleArray(arrayOfCard);
 
         let distCard = i % 4;
         if (distCard === 0) {
-            myImg.style.left = i * 7 + "px";
+            player1.push(newShuffleCard[i])
+            myImg.style.left = (i / 4 * 20) + "px";
             document.getElementById('player1').appendChild(myImg)
         };
         if (distCard === 1) {
-            myImg.style.left = i * 7 + "px";
+            player2.push(newShuffleCard[i])
+            myImg.style.left = ((i - 1) / 4 * 20) + "px";
             document.getElementById('player2').appendChild(myImg)
         }
         if (distCard === 2) {
-            myImg.style.left = i * 7 + "px";
+            player3.push(newShuffleCard[i])
+            myImg.style.left = ((i - 2) / 4 * 20) + "px";
             document.getElementById('player3').appendChild(myImg)
         };
         if (distCard === 3) {
-            myImg.style.left = i * 7 + "px";
+            player4.push(newShuffleCard[i])
+            myImg.style.left = ((i - 3) / 4 * 20) + "px";
             document.getElementById('player4').appendChild(myImg)
         };
 
     }
+
 })();
 
 
