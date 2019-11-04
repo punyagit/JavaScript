@@ -19,75 +19,38 @@ function shuffleArray(arr) {
         arr.pop();
     }
     return newArray
-
 }
-
-
 
 let newShuffleCard = shuffleArray(arrayOfCard);
 
 
-let shortCard = (function () {
-    let myImg;
+(function () {
     let player1 = []
     let player2 = []
     let player3 = []
     let player4 = []
 
     for (let i = 0; i < newShuffleCard.length; i++) {
-        myImg = document.createElement("img")
-        myImg.src = "image/" + newShuffleCard[i]
-        myImg.width = 100;
-        myImg.height = 130;
-
         let distCard = i % 4;
-        if (distCard === 0) {
-            player1.push(newShuffleCard[i])
-            myImg.style.left = (i / 4 * 14) + "px";
-            document.getElementById('player1').appendChild(myImg)
-        };
-        if (distCard === 1) {
-            player2.push(newShuffleCard[i])
-            myImg.style.left = ((i - 1) / 4 * 14) + "px";
-            document.getElementById('player2').appendChild(myImg)
-        }
-        if (distCard === 2) {
-            player3.push(newShuffleCard[i])
-            myImg.style.left = ((i - 2) / 4 * 14) + "px";
-            document.getElementById('player3').appendChild(myImg)
-        };
-        if (distCard === 3) {
-            player4.push(newShuffleCard[i])
-            myImg.style.left = ((i - 3) / 4 * 14) + "px";
-            document.getElementById('player4').appendChild(myImg)
-        };
-
+        if (distCard === 0) player1.push(newShuffleCard[i])
+        if (distCard === 1) player2.push(newShuffleCard[i])
+        if (distCard === 3) player3.push(newShuffleCard[i])
+        if (distCard === 3) player4.push(newShuffleCard[i])
     }
-    return function (id) {
-        if (id === "player1") displaySortedCard(player1, id)
-
-        if (id === "player2") displaySortedCard(player2, id)
-
-        if (id === "player3") displaySortedCard(player3, id)
-
-        if (id === "player4") displaySortedCard(player4, id)
-
-    }
-
-
-
-
+    sortAndDisplayCard(player1, "player1")
+    sortAndDisplayCard(player2, "player2")
+    sortAndDisplayCard(player3, "player3")
+    sortAndDisplayCard(player4, "player4")
 })();
 
-displaySortedCard = (array, id) => {
+function sortAndDisplayCard(array, id) {
+    let myImg;
     array.sort()
-
     for (let i = 0; i < array.length; i++) {
         myImg = document.createElement("img")
         myImg.src = "image/" + array[i]
         myImg.width = 100;
         myImg.height = 130;
-
         myImg.style.left = (i * 14) + "px";
         document.getElementById(id).appendChild(myImg)
         myImg.addEventListener("mouseover", myFunction);
@@ -99,15 +62,12 @@ displaySortedCard = (array, id) => {
 
 function myFunction(e) {
     let x = e.currentTarget
-
     x.style.transform = "scale(1.1)";
-
 }
 
 function myThirdFunction(e) {
     let x = e.currentTarget
     x.style.transform = "scale(1)";
-
 }
 
 

@@ -58,10 +58,10 @@ position: absolute;
 img{
     position: absolute;
 }
-button{
+p{
     position: absolute;
     left: 100px;
-    bottom: 5px;
+    bottom: -5px;
     background-color: silver;
 }
 
