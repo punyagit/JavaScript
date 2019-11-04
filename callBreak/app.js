@@ -79,8 +79,9 @@ let shortCard = (function () {
 
 })();
 
-function displaySortedCard(array, id) {
+displaySortedCard = (array, id) => {
     array.sort()
+
     for (let i = 0; i < array.length; i++) {
         myImg = document.createElement("img")
         myImg.src = "image/" + array[i]
@@ -89,12 +90,25 @@ function displaySortedCard(array, id) {
 
         myImg.style.left = (i * 14) + "px";
         document.getElementById(id).appendChild(myImg)
+        myImg.addEventListener("mouseover", myFunction);
+        myImg.addEventListener("mouseout", myThirdFunction);
 
     }
 
 }
 
+function myFunction(e) {
+    let x = e.currentTarget
 
+    x.style.transform = "scale(1.1)";
+
+}
+
+function myThirdFunction(e) {
+    let x = e.currentTarget
+    x.style.transform = "scale(1)";
+
+}
 
 
 
