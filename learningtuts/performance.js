@@ -1,22 +1,23 @@
-var X,Y,i, x,y, intNow;
+/* eslint-disable func-names */
+let X; let Y; let i; let x; let y;
 
 X = function() {};
-X.prototype.message = function(s) { var mymessage = s + "";}
+X.prototype.message = function(s) { let mymessage = `${s}`;}
 X.prototype.addition = function(i,j) { return (i *2 + j * 2) / 2; }
 
 Y = function() {
-    this.message = function(s) { var mymessage = s + "";}
-    this.addition = function(i,j) { return (i *2 + j * 2) / 2; }
+  this.message = function(s) { let mymessage = `${s}`;}
+  this.addition = function(i,j) { return (i *2 + j * 2) / 2; };
 };
 
 
 //intNow = (new Date()).getTime();
 for (i = 0; i < 1000000; i++) {
-    y = new Y();
-    y.message('hi');
-    y.addition(i,2)
+  y = new Y();
+  y.message('hi');
+  y.addition(i,2)
 }
-//console.log((new Date()).getTime() - intNow); //FF=5206ms; Safari=1554
+
 
 intNow = (new Date()).getTime();
 for (i = 0; i < 1000000; i++) {
@@ -24,8 +25,8 @@ for (i = 0; i < 1000000; i++) {
     x.message('hi');
     x.addition(i,2)
 }
-var na = ["punya","sam"]
-var person = {
+let na = ["punya","sam"]
+let person = {
     firstName: "punya",
     lastName: "chapagain",
     fullname: function(){
@@ -33,21 +34,15 @@ var person = {
     }
 }
 
-// var arr = []
-// for(i = 1; i < 10000; i++){
-//     arr.push(i)
-// }
-// console.log(arr.length)
 
-
-var num = 1000;
+let num = 1000;
 //person1.__proto__ = person
-var t0 = performance.now();
+let t0 = performance.now();
 for(i = 0; i < 10;i++){
     console.log("punya")
 }
 
-var t1 = performance.now();
+let t1 = performance.now();
 console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
 
 console.log(performance.memory)

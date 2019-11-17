@@ -1,35 +1,18 @@
+/* eslint-disable no-use-before-define */
 const canvas = document.getElementById('canvas');
-//const canvas = document.querySelector('canvas')
-canvas.addEventListener('mousedown', function (e) {
-    getCursorPosition(canvas, e)
-})
-
-
-
-let tempX = 0;
+// const canvas = document.querySelector('canvas')
+canvas.addEventListener('mousedown', (e) => {
+  getCursorPosition(canvas, e);
+});
 
 const ctx = canvas.getContext('2d');
 
+// eslint-disable-next-line no-shadow
 function getCursorPosition(canvas, event) {
-    var rect = canvas.getBoundingClientRect();
-
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-    console.log("x: " + x + " y: " + y);
-    ctx.beginPath();
-    ctx.arc(x, y + 50, 100, 0, 2 * Math.PI);
-    ctx.stroke();
-    // if (tempX) {
-    //     ctx.strokeStyle = 'green';
-    //     ctx.lineWidth = 6;
-    //     ctx.lineTo(x, y);
-
-    //     ctx.stroke();
-    // } else {
-    //     ctx.beginPath();
-    //     ctx.moveTo(x, y);
-    //     console.log("fdf")
-    //     tempX = 1
-    // }
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  ctx.beginPath();
+  ctx.arc(x, y + 50, 100, 0, 2 * Math.PI);
+  ctx.stroke();
 }
-

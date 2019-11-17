@@ -12,7 +12,7 @@ NaN === NaN // false
 
 undefined
 
-var x,
+let x,
 (x === undefined) ? true : false;
 
 null
