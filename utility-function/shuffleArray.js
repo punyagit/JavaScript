@@ -1,20 +1,16 @@
-// Fisher-yates shuffle algorithm    -- 0(n)
-//let myFunc = require('./util')
-
+// Fisher-yates shuffle algorithm // Modern method Durstenfeld's version   -- 0(n)
 function shuffleArray(arr) {
-    let newArray = []
-    while (arr.length >= 1) {
-        let randomNumber = Math.floor(Math.random() * arr.length);
-        newArray.push(arr[randomNumber])
-        arr[randomNumber] = arr[arr.length - 1]
-
-
-
-        arr.pop();
-    }
-    return newArray
-
+  const shuffledArray = [];
+  let value = arr.length;
+  const newArray = [...arr];
+  while (value >= 1) {
+    const randomNumber = Math.floor(Math.random() * value);
+    shuffledArray.push(newArray[randomNumber]);
+    newArray[randomNumber] = newArray[arr.length - 1];
+    arr.pop();
+    value -= 1;
+  }
+  return shuffledArray;
 }
 
-
-console.log(shuffleArray([3, "punya", 7, "bisam", 23, 56, 62]));
+console.log(shuffleArray([3, 'punya', 7, 'bisam', 23, 56, 62]));
