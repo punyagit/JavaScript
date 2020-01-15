@@ -1,6 +1,3 @@
-
-
-
 // function calulateDailyCompoundInterest(principal, day) {
 //     for (let i = 1; i <= day; i++) {
 //         let interest = (principal * 1 / 100)
@@ -13,15 +10,13 @@
 // }
 
 function calulateDailyCompoundInterest(principal, day) {
-    if (day > 0) {
-        let interest = (principal * 1 / 100)
-        principal = principal + interest
-        day = day - 1
-        return calulateDailyCompoundInterest(principal, day)
-
-    }
-    console.log(principal)
+  if (day > 0) {
+    const interest = (principal * 1) / 100;
+    const amount = principal + interest;
+    const newDay = day - 1;
+    return calulateDailyCompoundInterest(amount, newDay);
+  }
+  console.log(amount);
 }
 
-
-calulateDailyCompoundInterest(.0575, 365)
+calulateDailyCompoundInterest(0.0575, 365);
