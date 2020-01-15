@@ -1,26 +1,17 @@
-
- Utils = (function(){
-    return{
-        shuffleArray: function(arr){
-            let newArray =[]
-            let c = 0
-            while(arr.length >= 1){
-                let randomNumber = Math.floor(Math.random() * arr.length);
-                    newArray.push(arr[randomNumber])
-                    arr[randomNumber] = arr[arr.length-1]
-                    
-                
-                
-                arr.pop();
-            }
-            return newArray
-    
-        }
-
+const Utils = (() => ({
+  shuffleArray(arr) {
+    const shuffledArray = [];
+    let value = arr.length;
+    const newArray = [...arr];
+    while (value >= 1) {
+      const randomNumber = Math.floor(Math.random() * value);
+      shuffledArray.push(newArray[randomNumber]);
+      newArray[randomNumber] = newArray[newArray.length - 1];
+      newArray.pop();
+      value -= 1;
     }
-    
+    return shuffledArray;
+  }
+}))();
 
-})();
-
-module.exports = Utils
-
+module.exports = Utils;
