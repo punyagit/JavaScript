@@ -1,7 +1,7 @@
 const Util = require('../utility-function/util');
 // prettier-ignore
-const arrayOfCard = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,
-'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
+const arrayOfCard = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,
+11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
 let multipleArrayOfCard = [];
 
@@ -13,17 +13,16 @@ function shuflleCard(numberOfDeck) {
   return shuffleDeckOfCard;
 }
 
-function dealCard(numberOfPlayer, deck) {
-  const card = shuflleCard(deck);
+function allDealCard(numberOfPlayer, card) {
   const cardOut = [];
   const cardToDeal = numberOfPlayer * 2 + 2;
   for (let i = 0; i < cardToDeal; i += 1) {
-    let playerName = i % (numberOfPlayer + 1);
+    const playerName = i % (numberOfPlayer + 1);
     if (cardOut[playerName] === undefined) cardOut[playerName] = [];
 
-    cardOut[playerName].push(card.pop());
+    cardOut[playerName].push(card.shift());
   }
   return cardOut;
 }
 
-module.exports = dealCard;
+module.exports = { allDealCard, shuflleCard };
