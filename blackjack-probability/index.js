@@ -3,7 +3,7 @@ const basicStrategy = require('./basicStrategy');
 
 function playBlackJack(numberOfPlayer, deck) {
   const card = shuflleCard(deck);
-  console.log(card.slice(4, 10));
+  console.log(card.slice(8, 15));
   const dealCard = allDealCard(numberOfPlayer, card);
   console.log(dealCard);
   const dealerCard = dealCard[dealCard.length - 1];
@@ -12,17 +12,20 @@ function playBlackJack(numberOfPlayer, deck) {
   for (let i = 0; i < numberOfPlayer; i += 1) {
     // prettier-ignore
     let playerAfterStrategy = basicStrategy(dealCard[i], dealerCard, card);
-
     if (!Array.isArray(playerAfterStrategy)) {
-      while (playerAfterStrategy <= 16 && dealerCard[0] >= 7) {
+      while (
+        playerAfterStrategy <= 11 ||
+        (playerAfterStrategy <= 16 && dealerCard[0] >= 7)
+      ) {
         playerAfterStrategy += card.shift();
       }
       playerCardValueArray.push(playerAfterStrategy);
-
-      //console.log(`value of player ${playerAfterStrategy}`);
     } else {
       for (let i = 0; i < 2; i += 1) {
-        while (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7) {
+        while (
+          playerAfterStrategy[i] <= 11 ||
+          (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7)
+        ) {
           playerAfterStrategy[i] = playerAfterStrategy[i] + card.shift();
         }
         playerCardValueArray.push(playerAfterStrategy[i]);
@@ -30,11 +33,14 @@ function playBlackJack(numberOfPlayer, deck) {
     }
   }
 
-  console.log(playerCardValueArray);
   while (dealerCardValue <= 16) {
     dealerCardValue += card.shift();
   }
 
+  printResult(playerCardValueArray, dealerCardValue);
+}
+
+function printResult(playerCardValueArray, dealerCardValue) {
   for (let i = 0; i < playerCardValueArray.length; i += 1) {
     if (playerCardValueArray[i] > 21) {
       console.log(
@@ -66,4 +72,4 @@ function playBlackJack(numberOfPlayer, deck) {
   }
 }
 
-playBlackJack(1, 6);
+playBlackJack(3, 6);

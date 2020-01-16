@@ -19,23 +19,14 @@ function blackJackBasicStrategy(playerCard, dealerCard, card) {
     return playerCardValue;
   }
 
-  return dealHardCard(playerCardValue, card);
-}
-
-function splitCard(cardToSplit, card) {
-  const value1 = cardToSplit + card.shift();
-
-  const value2 = cardToSplit + card.shift();
-  return [value1, value2];
-}
-
-function dealHardCard(playerCardValue, card) {
-  if (playerCardValue <= 11) {
-    return playerCardValue + card.shift();
-  }
   return playerCardValue;
 }
 
-function dealAce(playerCardValue, dealerFaceUpValue) {}
+function splitCard(cardToSplit, card) {
+  const value1 = cardToSplit;
+
+  const value2 = cardToSplit;
+  return [value1, value2];
+}
 
 module.exports = blackJackBasicStrategy;
