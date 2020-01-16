@@ -17,7 +17,18 @@ function playBlackJack(numberOfPlayer, deck) {
         playerAfterStrategy <= 11 ||
         (playerAfterStrategy <= 16 && dealerCard[0] >= 7)
       ) {
-        playerAfterStrategy += card.shift();
+        let pullCard = card.shift();
+        console.log(`i have pull a card ${pullCard}`);
+        if (pullCard === 11) {
+          if (pullCard + playerAfterStrategy > 21) {
+            playerAfterStrategy += 1;
+            console.log(`i am from inside ${playerAfterStrategy}`);
+          } else {
+            playerAfterStrategy += pullCard;
+          }
+        } else {
+          playerAfterStrategy += pullCard;
+        }
       }
       playerCardValueArray.push(playerAfterStrategy);
     } else {
