@@ -1,38 +1,41 @@
 function printResult(playerCardValueArray, dealerCardValue) {
+  //return dealerCardValue;
+  let v = [];
+
   for (let i = 0; i < playerCardValueArray.length; i += 1) {
-    if (playerCardValueArray[i] > 21) {
-      return 'pb';
-      // console.log(
-      //   `Dealer win player${i + 1} busted with ${playerCardValueArray[i]}`,
-      // );
-    } else if (
-      playerCardValueArray[i] <= 21 &&
-      playerCardValueArray[i] === dealerCardValue
-    ) {
-      return 'tie';
-      // console.log(
-      //   `player${i + 1} tie with value ${
-      //     playerCardValueArray[i]
-      //   }  ${dealerCardValue}`,
-      // );
-    } else if (playerCardValueArray[i] <= 21 && dealerCardValue > 21) {
-      return 'pw';
-      // console.log(
-      //   `player${i + 1} win ${playerCardValueArray[i]}  ${dealerCardValue}`,
-      // );
-    } else if (
-      playerCardValueArray[i] <= 21 &&
-      playerCardValueArray[i] > dealerCardValue
-    ) {
-      return 'pw';
-      // console.log(
-      //   `player${i + 1} win ${playerCardValueArray[i]}  ${dealerCardValue}`,
-      // );
+    let value = checkWinner(playerCardValueArray, dealerCardValue, i);
+    if (playerCardValueArray.length > 1) {
+      v.push(value);
     } else {
-      return 'dw';
-      // console.log(`dealer win ${playerCardValueArray[i]} ${dealerCardValue}`);
+      v.push(value);
     }
+    console.log(value);
   }
+  return v;
+  //console.log(v);
 }
+
+function checkWinner(playerCardValueArray, dealerCardValue, i) {
+  let v = '';
+  if (playerCardValueArray[i] > 21) {
+    v = 'pb';
+  } else if (
+    playerCardValueArray[i] <= 21 &&
+    playerCardValueArray[i] === dealerCardValue
+  ) {
+    v = 'tie';
+  } else if (playerCardValueArray[i] <= 21 && dealerCardValue > 21) {
+    v = 'pw';
+  } else if (
+    playerCardValueArray[i] <= 21 &&
+    playerCardValueArray[i] > dealerCardValue
+  ) {
+    v = 'pw';
+  } else {
+    v = 'dw';
+  }
+  return v;
+}
+//console.log(printResult([11], 45));
 
 module.exports = printResult;

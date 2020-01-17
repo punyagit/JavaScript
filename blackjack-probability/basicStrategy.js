@@ -1,4 +1,4 @@
-function basicStrategy(playerCard, dealerCard, card) {
+function basicStrategy(playerCard, dealerCard) {
   const playerCardValue = playerCard[0] + playerCard[1];
 
   const dealerFaceUpValue = dealerCard[0];

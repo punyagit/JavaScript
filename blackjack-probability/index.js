@@ -1,19 +1,20 @@
 /* eslint-disable no-lonely-if */
 const { allDealCard, shuflleCard } = require('./dealCard');
-const { basicStrategy, handleAceCard } = require('./basicStrategy');
 const printResult = require('./printResult');
+const { basicStrategy, handleAceCard } = require('./basicStrategy');
 
 function playBlackJack(numberOfPlayer, deck) {
   const card = shuflleCard(deck);
-  console.log(card.slice(8, 15));
+  //console.log(card.slice(8, 15));
   const dealCard = allDealCard(numberOfPlayer, card);
   console.log(dealCard);
   const dealerCard = dealCard[dealCard.length - 1];
   let dealerCardValue = 0;
-  let playerCardValueArray = [];
+  const playerCardValueArray = [];
+
   for (let i = 0; i < numberOfPlayer; i += 1) {
     // prettier-ignore
-    let playerAfterStrategy = basicStrategy(dealCard[i], dealerCard, card);
+    let playerAfterStrategy = basicStrategy(dealCard[i], dealerCard);
     if (!Array.isArray(playerAfterStrategy)) {
       while (
         playerAfterStrategy <= 11 ||
@@ -48,10 +49,27 @@ function playBlackJack(numberOfPlayer, deck) {
     }
   }
   dealerCardValue = handleAceCard(dealerCard, card);
-
-  printResult(playerCardValueArray, dealerCardValue);
+  return printResult(playerCardValueArray, dealerCardValue);
 }
 
-playBlackJack(1, 6);
+function playMultipleGames(times) {
+  const arr = [];
+  let pwCount = 0;
+  let dwCount = 0;
+  let tieCount = 0;
+  for (let i = 0; i < times; i += 1) {
+    let value = playBlackJack(3, 3);
+    //console.log(value.length);
+    if (value === 'pw') pwCount += 1;
+    if (value === 'tie') tieCount += 1;
+    if (value === 'dw' || value === 'pb') dwCount += 1;
 
-// module.exports = playBlackJack;
+    arr.push(value);
+  }
+  console.log(arr);
+  console.log(
+    `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
+  );
+  //return arr;
+}
+playMultipleGames(2);
