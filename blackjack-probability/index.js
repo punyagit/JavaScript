@@ -1,5 +1,6 @@
+/* eslint-disable no-lonely-if */
 const { allDealCard, shuflleCard } = require('./dealCard');
-const basicStrategy = require('./basicStrategy');
+const { basicStrategy, handleAceCard } = require('./basicStrategy');
 const printResult = require('./printResult');
 
 function playBlackJack(numberOfPlayer, deck) {
@@ -31,37 +32,26 @@ function playBlackJack(numberOfPlayer, deck) {
       }
       playerCardValueArray.push(playerAfterStrategy);
     } else {
-      for (let i = 0; i < 2; i += 1) {
-        while (
-          playerAfterStrategy[i] <= 11 ||
-          (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7)
-        ) {
-          playerAfterStrategy[i] += card.shift();
+      if (playerAfterStrategy[0] !== playerAfterStrategy[1]) {
+        playerCardValueArray.push(handleAceCard(playerAfterStrategy, card));
+      } else {
+        for (let i = 0; i < 2; i += 1) {
+          while (
+            playerAfterStrategy[i] <= 11 ||
+            (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7)
+          ) {
+            playerAfterStrategy[i] += card.shift();
+          }
+          playerCardValueArray.push(playerAfterStrategy[i]);
         }
-        playerCardValueArray.push(playerAfterStrategy[i]);
       }
     }
   }
-  dealerCardValue = handleDealerCard(dealerCard, card);
+  dealerCardValue = handleAceCard(dealerCard, card);
 
   printResult(playerCardValueArray, dealerCardValue);
 }
 
-function handleDealerCard(cardAllocated, card) {
-  let value = cardAllocated.includes(11);
-  let cardValue = cardAllocated[0] + cardAllocated[1];
-  while (cardValue <= 16 || (cardValue > 21 && value)) {
-    if (cardValue > 21) cardValue -= 10;
-    let pullCard = card.shift();
-    console.log(`i have pull a card ${pullCard}`);
+playBlackJack(1, 6);
 
-    cardValue += pullCard;
-    if (cardValue > 21 && (value || pullCard === 11)) {
-      cardValue -= 10;
-      console.log(cardValue);
-    }
-  }
-  return cardValue;
-}
-
-playBlackJack(3, 6);
+// module.exports = playBlackJack;
