@@ -1,5 +1,6 @@
 const { allDealCard, shuflleCard } = require('./dealCard');
 const basicStrategy = require('./basicStrategy');
+const printResult = require('./printResult');
 
 function playBlackJack(numberOfPlayer, deck) {
   const card = shuflleCard(deck);
@@ -7,7 +8,7 @@ function playBlackJack(numberOfPlayer, deck) {
   const dealCard = allDealCard(numberOfPlayer, card);
   console.log(dealCard);
   const dealerCard = dealCard[dealCard.length - 1];
-  let dealerCardValue = dealerCard[0] + dealerCard[1];
+  let dealerCardValue = 0;
   let playerCardValueArray = [];
   for (let i = 0; i < numberOfPlayer; i += 1) {
     // prettier-ignore
@@ -18,11 +19,9 @@ function playBlackJack(numberOfPlayer, deck) {
         (playerAfterStrategy <= 16 && dealerCard[0] >= 7)
       ) {
         let pullCard = card.shift();
-        console.log(`i have pull a card ${pullCard}`);
         if (pullCard === 11) {
           if (pullCard + playerAfterStrategy > 21) {
             playerAfterStrategy += 1;
-            console.log(`i am from inside ${playerAfterStrategy}`);
           } else {
             playerAfterStrategy += pullCard;
           }
@@ -37,50 +36,32 @@ function playBlackJack(numberOfPlayer, deck) {
           playerAfterStrategy[i] <= 11 ||
           (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7)
         ) {
-          playerAfterStrategy[i] = playerAfterStrategy[i] + card.shift();
+          playerAfterStrategy[i] += card.shift();
         }
         playerCardValueArray.push(playerAfterStrategy[i]);
       }
     }
   }
-
-  while (dealerCardValue <= 16) {
-    dealerCardValue += card.shift();
-  }
+  dealerCardValue = handleDealerCard(dealerCard, card);
 
   printResult(playerCardValueArray, dealerCardValue);
 }
 
-function printResult(playerCardValueArray, dealerCardValue) {
-  for (let i = 0; i < playerCardValueArray.length; i += 1) {
-    if (playerCardValueArray[i] > 21) {
-      console.log(
-        `Dealer win player${i + 1} busted with ${playerCardValueArray[i]}`,
-      );
-    } else if (
-      playerCardValueArray[i] <= 21 &&
-      playerCardValueArray[i] === dealerCardValue
-    ) {
-      console.log(
-        `player${i + 1} tie with value ${
-          playerCardValueArray[i]
-        }  ${dealerCardValue}`,
-      );
-    } else if (playerCardValueArray[i] <= 21 && dealerCardValue > 21) {
-      console.log(
-        `player${i + 1} win ${playerCardValueArray[i]}  ${dealerCardValue}`,
-      );
-    } else if (
-      playerCardValueArray[i] <= 21 &&
-      playerCardValueArray[i] > dealerCardValue
-    ) {
-      console.log(
-        `player${i + 1} win ${playerCardValueArray[i]}  ${dealerCardValue}`,
-      );
-    } else {
-      console.log(`dealer win ${playerCardValueArray[i]} ${dealerCardValue}`);
+function handleDealerCard(cardAllocated, card) {
+  let value = cardAllocated.includes(11);
+  let cardValue = cardAllocated[0] + cardAllocated[1];
+  while (cardValue <= 16 || (cardValue > 21 && value)) {
+    if (cardValue > 21) cardValue -= 10;
+    let pullCard = card.shift();
+    console.log(`i have pull a card ${pullCard}`);
+
+    cardValue += pullCard;
+    if (cardValue > 21 && (value || pullCard === 11)) {
+      cardValue -= 10;
+      console.log(cardValue);
     }
   }
+  return cardValue;
 }
 
 playBlackJack(3, 6);
