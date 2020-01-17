@@ -7,7 +7,7 @@ function playBlackJack(numberOfPlayer, deck) {
   const card = shuflleCard(deck);
   //console.log(card.slice(8, 15));
   const dealCard = allDealCard(numberOfPlayer, card);
-  console.log(dealCard);
+  // console.log(dealCard);
   const dealerCard = dealCard[dealCard.length - 1];
   let dealerCardValue = 0;
   const playerCardValueArray = [];
@@ -58,18 +58,19 @@ function playMultipleGames(times) {
   let dwCount = 0;
   let tieCount = 0;
   for (let i = 0; i < times; i += 1) {
-    let value = playBlackJack(3, 3);
-    //console.log(value.length);
-    if (value === 'pw') pwCount += 1;
-    if (value === 'tie') tieCount += 1;
-    if (value === 'dw' || value === 'pb') dwCount += 1;
+    let value = playBlackJack(2, 3);
+    for (let i = 0; i < value.length; i += 1) {
+      if (value[i] === 'pw') pwCount += 1;
+      if (value[i] === 'tie') tieCount += 1;
+      if (value[i] === 'dw') dwCount += 1;
+    }
 
     arr.push(value);
   }
-  console.log(arr);
+  // console.log(arr);
   console.log(
     `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
   );
   //return arr;
 }
-playMultipleGames(2);
+playMultipleGames(250);

@@ -9,7 +9,6 @@ function printResult(playerCardValueArray, dealerCardValue) {
     } else {
       v.push(value);
     }
-    console.log(value);
   }
   return v;
   //console.log(v);
@@ -18,7 +17,7 @@ function printResult(playerCardValueArray, dealerCardValue) {
 function checkWinner(playerCardValueArray, dealerCardValue, i) {
   let v = '';
   if (playerCardValueArray[i] > 21) {
-    v = 'pb';
+    v = 'dw';
   } else if (
     playerCardValueArray[i] <= 21 &&
     playerCardValueArray[i] === dealerCardValue
