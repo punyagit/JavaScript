@@ -60,9 +60,10 @@ function playMultipleGames(times) {
   let dwCount = 0;
   let tieCount = 0;
   let temp = '';
+  let winner = '';
   let highValue = 1;
   for (let k = 0; k < times; k += 1) {
-    let value = playBlackJack(1, 6);
+    let value = playBlackJack(1, 8);
     for (let i = 0; i < value.length; i += 1) {
       //console.log(temp);
       if (value[i] === 'pw') pwCount += 1;
@@ -81,18 +82,21 @@ function playMultipleGames(times) {
         playerCount = 1;
       }
       if (value[i] !== 'tie') temp = value[i];
-      if (playerCount > highValue) highValue = playerCount;
+      if (playerCount > highValue) {
+        highValue = playerCount;
+        winner = arr[k - 1];
+      }
 
       arr.push(value[i]);
     }
   }
   console.log(combArr);
   //console.log(arr);
-  console.log(`the highest value is ${highValue}`);
+  console.log(`the highest value is ${highValue} and that is ${winner}`);
 
   console.log(
     `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
   );
   //return arr;
 }
-playMultipleGames(100);
+playMultipleGames(500);
