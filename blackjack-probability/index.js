@@ -54,23 +54,42 @@ function playBlackJack(numberOfPlayer, deck) {
 
 function playMultipleGames(times) {
   const arr = [];
+  const combArr = [];
+  let playerCount = 1;
   let pwCount = 0;
   let dwCount = 0;
   let tieCount = 0;
-  for (let i = 0; i < times; i += 1) {
-    let value = playBlackJack(2, 3);
+  let temp = '';
+  for (let k = 0; k < times; k += 1) {
+    let value = playBlackJack(1, 6);
     for (let i = 0; i < value.length; i += 1) {
+      //console.log(temp);
       if (value[i] === 'pw') pwCount += 1;
       if (value[i] === 'tie') tieCount += 1;
       if (value[i] === 'dw') dwCount += 1;
-    }
+      // console.log(value[i] + '======' + temp);
 
-    arr.push(value);
+      if (value[i] === temp || value[i === 'tie']) {
+        if (value[i] !== 'tie') {
+          playerCount += 1;
+        }
+        if (k === times - 1) combArr.push(playerCount + value[i]);
+      } else {
+        if (playerCount > 1) combArr.push(playerCount + arr[k - 1]);
+
+        playerCount = 1;
+      }
+      if (value[i] !== 'tie') temp = value[i];
+
+      arr.push(value[i]);
+    }
   }
-  // console.log(arr);
+  console.log(combArr);
+  //console.log(arr);
+
   console.log(
     `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
   );
   //return arr;
 }
-playMultipleGames(250);
+playMultipleGames(100);

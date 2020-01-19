@@ -1,40 +1,37 @@
 function printResult(playerCardValueArray, dealerCardValue) {
-  //return dealerCardValue;
-  let v = [];
+  let winnerList = [];
 
   for (let i = 0; i < playerCardValueArray.length; i += 1) {
     let value = checkWinner(playerCardValueArray, dealerCardValue, i);
     if (playerCardValueArray.length > 1) {
-      v.push(value);
+      winnerList.push(value);
     } else {
-      v.push(value);
+      winnerList.push(value);
     }
   }
-  return v;
-  //console.log(v);
+  return winnerList;
 }
 
 function checkWinner(playerCardValueArray, dealerCardValue, i) {
-  let v = '';
+  let winnerList = '';
   if (playerCardValueArray[i] > 21) {
-    v = 'dw';
+    winnerList = 'dw';
   } else if (
     playerCardValueArray[i] <= 21 &&
     playerCardValueArray[i] === dealerCardValue
   ) {
-    v = 'tie';
+    winnerList = 'tie';
   } else if (playerCardValueArray[i] <= 21 && dealerCardValue > 21) {
-    v = 'pw';
+    winnerList = 'pw';
   } else if (
     playerCardValueArray[i] <= 21 &&
     playerCardValueArray[i] > dealerCardValue
   ) {
-    v = 'pw';
+    winnerList = 'pw';
   } else {
-    v = 'dw';
+    winnerList = 'dw';
   }
-  return v;
+  return winnerList;
 }
-//console.log(printResult([11], 45));
 
 module.exports = printResult;
