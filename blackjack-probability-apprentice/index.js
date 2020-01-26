@@ -4,10 +4,11 @@ const printResult = require('./printResult');
 const { basicStrategy, handleAceCard } = require('./basicStrategy');
 
 function playBlackJack(numberOfPlayer, deck) {
-  const card = shuflleCard(deck);
-  //console.log(card.slice(8, 15));
-  const dealCard = allDealCard(numberOfPlayer, card);
-  // console.log(dealCard);
+  const card = [11, 2, 4, 7, 9, 2, 5]//shuflleCard(deck);
+  console.log(card);
+  //const dealCard = allDealCard(numberOfPlayer, card);
+  const dealCard = [[11, 2], [4, 5]]
+  console.log(dealCard);
   const dealerCard = dealCard[dealCard.length - 1];
   let dealerCardValue = 0;
   const playerCardValueArray = [];
@@ -18,9 +19,10 @@ function playBlackJack(numberOfPlayer, deck) {
     if (!Array.isArray(playerAfterStrategy)) {
       while (
         playerAfterStrategy <= 11 ||
-        (playerAfterStrategy <= 16 && dealerCard[0] >= 7)
+        (playerAfterStrategy <= 16 && dealerCard[0] >= 7) || (playerAfterStrategy === 12 && dealerCard[0] <= 3)
       ) {
         let pullCard = card.shift();
+        console.log(`pullCard ${pullCard}`);
         if (pullCard === 11) {
           if (pullCard + playerAfterStrategy > 21) {
             playerAfterStrategy += 1;
@@ -39,7 +41,7 @@ function playBlackJack(numberOfPlayer, deck) {
         for (let i = 0; i < 2; i += 1) {
           while (
             playerAfterStrategy[i] <= 11 ||
-            (playerAfterStrategy[i] <= 16 && dealerCard[0] >= 7)
+            (playerAfterStrategy <= 16 && dealerCard[0] >= 7) || (playerAfterStrategy === 12 && dealerCard[0] <= 3)
           ) {
             playerAfterStrategy[i] += card.shift();
           }
@@ -63,7 +65,7 @@ function playMultipleGames(times) {
   let winner = '';
   let highValue = 1;
   for (let k = 0; k < times; k += 1) {
-    let value = playBlackJack(1, 8);
+    let value = playBlackJack(1, 6);
     for (let i = 0; i < value.length; i += 1) {
       //console.log(temp);
       if (value[i] === 'pw') pwCount += 1;
@@ -82,11 +84,11 @@ function playMultipleGames(times) {
         playerCount = 1;
       }
       if (value[i] !== 'tie') temp = value[i];
-      if (playerCount >= 2) {
-        console.log(
-          `the repeat value is ${playerCount} and that is ${arr[k - 1]}`,
-        );
-      }
+      // if (playerCount >= 2) {
+      //   console.log(
+      //     `the repeat value is ${playerCount} and that is ${arr[k - 1]}`,
+      //   );
+      // }
       if (playerCount > highValue) {
         highValue = playerCount;
         winner = arr[k - 1];
@@ -97,11 +99,11 @@ function playMultipleGames(times) {
   }
   console.log(arr);
   //console.log(arr);
-  console.log(`the highest value is ${highValue} and that is ${winner}`);
+  //console.log(`the highest value is ${highValue} and that is ${winner}`);
 
-  console.log(
-    `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
-  );
+  // console.log(
+  //   `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount}`,
+  // );
   //return arr;
 }
-playMultipleGames(50);
+playMultipleGames(1);
