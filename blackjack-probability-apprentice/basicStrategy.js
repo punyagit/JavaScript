@@ -32,13 +32,13 @@ function basicStrategy(playerCard, dealerCard) {
   return playerCardValue;
 }
 
-function handleAceCard(cardAllocated, card) {
+function handleAceCard(cardAllocated, card, dealerCardValue) {
   let value = cardAllocated.includes(11);
   let cardValue = cardAllocated[0] + cardAllocated[1];
-  while ((cardValue <= 16 || cardValue > 21) && value) {
+  while ((cardValue <= 17 || cardValue > 21) || (cardValue === 18 && (dealerCardValue >= 9 && dealerCardValue <= 11)) && value) {
     if (cardValue > 21) cardValue -= 10;
     let pullCard = card.shift();
-    console.log(`pull card handle ace ===${pullCard}`)
+    //console.log(`pull card handle ace ===${pullCard}`)
     if (cardValue === 11) value = false;
     cardValue += pullCard;
     if (cardValue > 21 && value) {
@@ -48,4 +48,18 @@ function handleAceCard(cardAllocated, card) {
   return cardValue;
 }
 
-module.exports = { basicStrategy, handleAceCard };
+function handleDealerAceCard(cardAllocated, card) {
+  const value = cardAllocated.includes(11);
+  let cardValue = cardAllocated[0] + cardAllocated[1];
+  while (cardValue <= 16 || (cardValue > 21 && value)) {
+    if (cardValue > 21) cardValue -= 10;
+    let pullCard = card.shift();
+    cardValue += pullCard;
+    if (cardValue > 21 && (value || pullCard === 11)) {
+      cardValue -= 10;
+    }
+  }
+  return cardValue;
+}
+
+module.exports = { basicStrategy, handleAceCard, handleDealerAceCard };

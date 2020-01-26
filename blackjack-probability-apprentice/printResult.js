@@ -13,7 +13,7 @@ function printResult(playerCardValueArray, dealerCardValue) {
 }
 
 function checkWinner(playerCardValueArray, dealerCardValue, i) {
-  console.log(`player card == ${playerCardValueArray} dealer card  = ${dealerCardValue}`)
+  //console.log(`player card == ${playerCardValueArray} dealer card  = ${dealerCardValue}`)
   let winnerList = '';
   if (playerCardValueArray[i] > 21) {
     winnerList = 'dw';
