@@ -59,9 +59,9 @@ let array = Array.from(Array(2000).keys());
 //let array = [2, 2, 7, 9, 5,]
 
 let start = new Date();
-console.log(twoSum(array, 5588));
+console.log(twoSum2(array, 5899));
 let timeTaken = new Date() - start;
 
 console.log('time taken ' + timeTaken + ' Milli Second');
 
-module.exports = { twoSum, timeTaken };
+//module.exports = { twoSum, timeTaken };

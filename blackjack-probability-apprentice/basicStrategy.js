@@ -49,6 +49,7 @@ function handleAceCard(cardAllocated, card, dealerCardValue) {
 }
 
 function handleDealerAceCard(cardAllocated, card) {
+  //console.log(`card allocated for star ${cardAllocated}`);
   const value = cardAllocated.includes(11);
   let cardValue = cardAllocated[0] + cardAllocated[1];
   while (cardValue <= 16 || (cardValue > 21 && value)) {

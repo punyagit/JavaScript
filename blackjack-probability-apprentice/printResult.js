@@ -1,4 +1,5 @@
 function printResult(playerCardValueArray, dealerCardValue) {
+  console.log(`player card value = ${playerCardValueArray}  dealer card value = ${dealerCardValue}`)
   let winnerList = [];
 
   for (let i = 0; i < playerCardValueArray.length; i += 1) {

@@ -1,16 +1,29 @@
 const Util = require('../utility-function/util');
 // prettier-ignore
-const arrayOfCard = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,
-11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
+const arrayOfCard = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10,
+  11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
 let multipleArrayOfCard = [];
 
-function shuflleCard(numberOfDeck) {
+function shuflleCard(numberOfDeck = 6) {
+  console.log("i am suffling")
   for (let i = 0; i < numberOfDeck; i += 1) {
     multipleArrayOfCard = multipleArrayOfCard.concat(arrayOfCard);
   }
   const shuffleDeckOfCard = Util.shuffleArray(multipleArrayOfCard);
   return shuffleDeckOfCard;
+}
+
+function allDealCardStar(numberOfPlayer, card) {
+  const cardOut = [];
+  const cardToDeal = numberOfPlayer * 2 + 1;
+  for (let i = 0; i < cardToDeal; i += 1) {
+    const playerName = i % (numberOfPlayer + 1);
+    if (cardOut[playerName] === undefined) cardOut[playerName] = [];
+
+    cardOut[playerName].push(card.shift());
+  }
+  return cardOut;
 }
 
 function allDealCard(numberOfPlayer, card) {
@@ -25,4 +38,4 @@ function allDealCard(numberOfPlayer, card) {
   return cardOut;
 }
 
-module.exports = { allDealCard, shuflleCard };
+module.exports = { allDealCard, shuflleCard, allDealCardStar };
