@@ -6,6 +6,7 @@ const printResult = require('./printResult');
 function playBlackJack(numberOfPlayer, deckOfCard) {
 
   const card = [...deckOfCard];
+  console.log(card.slice(0, 11))
   const dealCard = allDealCard(numberOfPlayer, card);
 
   const dealerCard = dealCard[dealCard.length - 1];
@@ -58,7 +59,6 @@ function playBlackJackStar(numberOfPlayer, deckOfCard) {
   const card = [...deckOfCard];
 
   const dealStarCard = allDealCardStar(numberOfPlayer, card);
-  console.log(dealStarCard);
   const dealerCard = dealStarCard[dealStarCard.length - 1];
   let dealerCardValue = 0;
   const playerCardValueArray = [];

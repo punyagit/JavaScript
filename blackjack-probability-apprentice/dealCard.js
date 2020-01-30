@@ -6,7 +6,6 @@ const arrayOfCard = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11, 2, 3, 4, 5,
 let multipleArrayOfCard = [];
 
 function shuflleCard(numberOfDeck = 6) {
-  console.log("i am suffling")
   for (let i = 0; i < numberOfDeck; i += 1) {
     multipleArrayOfCard = multipleArrayOfCard.concat(arrayOfCard);
   }
