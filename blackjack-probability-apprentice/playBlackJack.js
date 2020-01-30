@@ -1,12 +1,12 @@
 const { allDealCard, allDealCardStar } = require('./dealCard');
 const { basicStrategy, handleAceCard, handleDealerAceCard } = require('./basicStrategy');
-const printResult = require('./printResult');
+const { printResult } = require('./printResult');
 
 
 function playBlackJack(numberOfPlayer, deckOfCard) {
 
   const card = [...deckOfCard];
-  console.log(card.slice(0, 11))
+  //console.log(card.slice(0, 11))
   const dealCard = allDealCard(numberOfPlayer, card);
 
   const dealerCard = dealCard[dealCard.length - 1];
