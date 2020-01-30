@@ -33,9 +33,9 @@ function playGames(times) {
       arr2.push(value2[0]);
     }
   }
-  displayResult(arr, 'normal')
+  displayResult(arr, '14 -----')
   displayResult(arr1, 'normal')
-  displayResult(arr2, '11 ---')
+  displayResult(arr2, '15 ---')
 }
 
 function playMultipleGames(deckOfCard) {
@@ -53,4 +53,4 @@ function playMultipleBustGames(deckOfCard) {
 }
 
 
-playGames(50);
+playGames(500);
