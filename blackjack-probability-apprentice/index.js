@@ -10,34 +10,47 @@ function playGames(times) {
   const arr2 = [];
   for (let k = 0; k < times; k += 1) {
     const deckOfCard = shuflleCard();
-    arr.push(playMultipleBustGames(deckOfCard));
-    arr1.push(playMultipleStarGames(deckOfCard));
-    arr2.push(playMultipleGames(deckOfCard));
+    let value = playMultipleGames(deckOfCard);
+    if (value.length === 2) {
+      arr.push(value[0]);
+      arr.push(value[1]);
+    } else {
+      arr.push(value[0]);
+    }
+    let value1 = playMultipleStarGames(deckOfCard);
+    if (value1.length === 2) {
+      arr1.push(value1[0]);
+      arr1.push(value1[1]);
+    } else {
+      arr1.push(value1[0]);
+    }
+
+    let value2 = playMultipleBustGames(deckOfCard);
+    if (value2.length === 2) {
+      arr2.push(value2[0]);
+      arr2.push(value2[1]);
+    } else {
+      arr2.push(value2[0]);
+    }
   }
-  displayResult(arr, 'bust')
-  displayResult(arr1, '3card')
-  displayResult(arr2, '4card')
+  displayResult(arr, 'normal')
+  displayResult(arr1, 'normal')
+  displayResult(arr2, '11 ---')
 }
 
 function playMultipleGames(deckOfCard) {
-  let value = playBlackJack(1, deckOfCard);
-  for (let i = 0; i < value.length; i += 1) {
-    return value[i]
-  }
+  const value = playBlackJack(1, deckOfCard);
+  return value;
 }
 
 function playMultipleStarGames(deckOfCard) {
-  let value = playBlackJackStar(1, deckOfCard);
-  for (let i = 0; i < value.length; i += 1) {
-    return value[i];
-  }
+  const value = playBlackJackStar(1, deckOfCard);
+  return value;
 }
 function playMultipleBustGames(deckOfCard) {
-  let value = playBlackJackBust(1, deckOfCard);
-  for (let i = 0; i < value.length; i += 1) {
-    return value[i];
-  }
+  const value = playBlackJackBust(1, deckOfCard);
+  return value;
 }
 
 
-playGames(200);
+playGames(50);
