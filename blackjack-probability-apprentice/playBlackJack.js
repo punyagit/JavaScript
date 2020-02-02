@@ -70,7 +70,7 @@ function playBlackJackStar(numberOfPlayer, deckOfCard) {
     if (!Array.isArray(playerAfterStrategy)) {
       while (
         playerAfterStrategy <= 11 ||
-        (playerAfterStrategy <= 16 && dealerCard[0] >= 7) || (playerAfterStrategy === 12 && dealerCard[0] <= 3)
+        (playerAfterStrategy <= 16 && dealerCard[0] >= 7)
       ) {
         let pullCard = card.shift();
         if (pullCard === 11) {
@@ -160,13 +160,6 @@ function playBlackJackBust(numberOfPlayer, deckOfCard) {
 
 
 module.exports = { playBlackJack, playBlackJackStar, playBlackJackBust }
-
-
-
-
-
-
-
 
 // normal black jack with 4 card deal
 // function playBlackJack(numberOfPlayer, deckOfCard) {

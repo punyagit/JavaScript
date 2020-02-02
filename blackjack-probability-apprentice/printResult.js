@@ -1,7 +1,6 @@
 function printResult(playerCardValueArray, dealerCardValue) {
-  //console.log(`player card value = ${playerCardValueArray}  dealer card value = ${dealerCardValue}`)
+  // console.log(`player card value = ${playerCardValueArray}  dealer card value = ${dealerCardValue}`)
   let winnerList = [];
-
   for (let i = 0; i < playerCardValueArray.length; i += 1) {
     let value = checkWinner(playerCardValueArray, dealerCardValue, i);
     if (playerCardValueArray.length > 1) {
@@ -67,14 +66,12 @@ function displayResult(arr, strategy) {
       highValue = playerCount;
       //winner = arr[k - 1];
     }
-
   }
 
   //console.log(`the highest value is ${highValue} and that is ${winner} and strategy ${strategy}`);
   console.log(
     `player win = ${pwCount} --- dealer win = ${dwCount} --- tie = ${tieCount} and strategy ${strategy}`,
   );
-
 }
 
 module.exports = { printResult, displayResult };
