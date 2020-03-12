@@ -1,16 +1,23 @@
-function game3(array) {
+function game3(array, valueToBet, backedNumber) {
   let times = 0;
-  let count = 0;
+  let amountToRecover = 0;
   for (let i = 0; i < array.length; i++) {
-    if (count !== 0 && array[i] === 0) {
-      count = count + 1;
+    if (amountToRecover === 0 && array[i] !== 0) {
+      amountToRecover = amountToRecover + valueToBet;
+    } else if (amountToRecover !== 0 && array[i] !== 0) {
+      amountToRecover = amountToRecover + valueToBet;
+    } else if (amountToRecover !== 0 && array[i] === 0) {
+      amountToRecover += amountToRecover;
+    } else {
+      amountToRecover = 0;
     }
-    if (count === 0 && array[i] !== 0) {
-      count = count + 2;
-    }
+    console.log(`amount to recover in ${i} is ${amountToRecover}`);
   }
 
-  console.log(count);
+  //console.log(amo);
 }
 
-game3([1, 0]);
+// prettier-ignore
+//let array = [0,1,0,0,6,0,12,25,6,0,0,25,52,0,0,0,0,6,12,12,0,1,25,52,0]
+let array = [1,1,0]
+game3(array, 2, 3);
